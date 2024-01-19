@@ -17,11 +17,20 @@ Including another URLconf
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
+from django.contrib.auth import views as auth_views
 from django.urls import path, include
+
+from users.views import user_login, user_logout, register
+from calorie_calculator import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('news.urls')),
+    path('logout/', user_logout, name='logout'),
+    path('register/', register, name='register'),
+    path('login/', user_login, name='login'),
+    path('calorie_calculator/', views.index, name='index'),
+    path('delete/<int:id>/', views.delete_consume, name="delete"),
 ]
 
 if settings.DEBUG:
