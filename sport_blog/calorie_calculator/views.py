@@ -24,5 +24,5 @@ def delete_consume(request, id):
     consumed_food = Consume.objects.get(id=id)
     if request.method == 'POST':
         consumed_food.delete()
-        return redirect('/')
+        return redirect('index')
     return render(request, 'calorie_calculator/delete.html')
