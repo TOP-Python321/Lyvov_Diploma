@@ -1,3 +1,11 @@
-body{
+.html {
+    position: relative;
+    max-width: 100%;
+    min-height: 100%;
+    overflow-y:hidden;
+    overflow-x: hidden;
+}
+
+.body{
     background-color: #ccc;
 }
